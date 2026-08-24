@@ -2,9 +2,9 @@ const messages = [
   "Hi.",
   "I am.",
   "Sigma.",
-  "Sigma 67",
+  "Sigma 67.",
   "And you are?",
-  "Are you really sigma? Really?"
+  "Are you really Sigma? Really?"
 ];
 
 const messageElement = document.getElementById("message");
