@@ -4,7 +4,8 @@ const messages = [
   "Sigma.",
   "Sigma 67.",
   "And you are?",
-  "Are you really Sigma? Really?"
+  "Are you really Sigma? Really?",
+  "Really, Lilah?"
 ];
 
 const messageElement = document.getElementById("message");
