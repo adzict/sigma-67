@@ -4,7 +4,7 @@ const messages = [
   "Sigma.",
   "Sigma 67.",
   "And you are?",
-  "Are you really Sigma? Really?",
+  "Are you really Sigma?",
   "Really, Lilah?"
 ];
 
