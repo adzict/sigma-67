@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff5bd1" />
 
-  <title>SIGMA-67</title>
+  <title>brainrot SIGMA67</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- v=3 helps browsers stop showing an older cached stylesheet -->
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 
 <body>
-  <main>
-    <div class="content">
+  <main class="home">
+    <section class="hero">
       <div id="message">Hi.</div>
 
-      <a href="game.html" class="sigma-game-button">
-        The SIGMA67 Game. Dare to play it.
+      <a class="sigma-game-button" href="game.html" aria-label="Play the SIGMA67 Game">
+        <span class="sigma-game-button__tiny">★ INSERT COIN ★</span>
+        <span class="sigma-game-button__main">The SIGMA67 Game.</span>
+        <span class="sigma-game-button__sub">Dare to play it.</span>
       </a>
-    </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
