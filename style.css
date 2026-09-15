@@ -39,6 +39,14 @@ main {
   padding: 30px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 #message {
   font-size: clamp(2.5rem, 8vw, 7rem);
   font-weight: 500;
@@ -53,6 +61,55 @@ main {
   opacity: 0;
 }
 
+/* Retro arcade link to the game */
+.sigma-game-button {
+  display: inline-block;
+  margin-top: 44px;
+  padding: 14px 22px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(0.72rem, 1.4vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.22);
+
+  border: 2px solid #ffffff;
+  text-decoration: none;
+
+  box-shadow:
+    5px 5px 0 #000000,
+    0 0 14px rgba(255, 255, 255, 0.28);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.sigma-game-button:hover {
+  color: #ffffff;
+  background: #000000;
+  transform: translate(-2px, -2px);
+
+  box-shadow:
+    7px 7px 0 #ffffff,
+    0 0 24px rgba(255, 255, 255, 0.65);
+}
+
+.sigma-game-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.sigma-game-button:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 5px;
+}
+
 @keyframes rainbow {
   0% {
     background-position: 0% 50%;
@@ -64,5 +121,28 @@ main {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 22px;
+  }
+
+  .sigma-game-button {
+    margin-top: 34px;
+    max-width: 92vw;
+    padding: 13px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  #message,
+  .sigma-game-button {
+    transition: none;
   }
 }
