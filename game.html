@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <title>SIGMA RUN // 67</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-card" aria-label="Sigma Run 67">
+      <header class="game-header">
+        <a class="back-link" href="index.html">← HOME</a>
+        <div class="title-wrap">
+          <div class="eyebrow">SIGMA-67 PRESENTS</div>
+          <h1>SIGMA RUN <span>// 67</span></h1>
+        </div>
+        <button id="soundButton" class="sound-button" type="button" aria-pressed="true">SOUND: ON</button>
+      </header>
+
+      <div class="screen-wrap">
+        <canvas id="gameCanvas" aria-label="Retro endless runner game"></canvas>
+
+        <div id="startOverlay" class="overlay">
+          <div class="overlay-panel">
+            <p class="tiny-label">PROTOCOL 67</p>
+            <h2>RUN. JUMP. DON'T PANIC.</h2>
+            <p>SPACE / ↑ / CLICK / TAP</p>
+            <button id="startButton" class="primary-button" type="button">START</button>
+          </div>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden" aria-live="polite">
+          <div class="overlay-panel">
+            <p class="tiny-label">SIGNAL LOST</p>
+            <h2>NOT SIGMA ENOUGH.</h2>
+            <p id="finalScore">SCORE: 0</p>
+            <button id="restartButton" class="primary-button" type="button">RETRY</button>
+          </div>
+        </div>
+
+        <div class="scanlines" aria-hidden="true"></div>
+      </div>
+
+      <footer class="game-footer">
+        <span>SPACE / ↑ / TAP = JUMP</span>
+        <span id="statusText">READY</span>
+        <span>BEST: <strong id="bestScore">0</strong></span>
+      </footer>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
