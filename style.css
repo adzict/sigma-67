@@ -1,227 +1,105 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-}
+html, body { margin: 0; width: 100%; min-height: 100%; }
 
 body {
   min-height: 100vh;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   color: #111;
-
-  background: linear-gradient(
-    -45deg,
-    #ff75b7,
-    #ffd86f,
-    #91f4c8,
-    #72d7ff,
-    #a98bff,
-    #ff89de
-  );
-
+  background: linear-gradient(-45deg, #ff75b7, #ffd86f, #91f4c8, #72d7ff, #a98bff, #ff89de);
   background-size: 400% 400%;
   animation: rainbow 14s ease infinite;
 }
 
-.home {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-}
-
-.hero {
-  width: min(980px, 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+.home { min-height: 100vh; display: grid; place-items: center; padding: 28px; }
+.hero { width: min(980px, 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 
 #message {
   font-size: clamp(3rem, 9vw, 8rem);
   font-weight: 600;
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  line-height: .95;
+  letter-spacing: -.055em;
   text-align: center;
-
   opacity: 1;
   transition: opacity 1.2s ease;
-
-  text-shadow:
-    2px 2px 0 rgba(255, 255, 255, 0.22),
-    -1px -1px 0 rgba(0, 0, 0, 0.08);
+  text-shadow: 2px 2px 0 rgba(255,255,255,.22), -1px -1px 0 rgba(0,0,0,.08);
 }
+#message.fade-out { opacity: 0; }
 
-#message.fade-out {
-  opacity: 0;
+.bird-link-bar, .bird-link-bar:visited {
+  position: absolute;
+  z-index: 30;
+  top: 18px;
+  right: 18px;
+  max-width: min(460px, calc(100vw - 36px));
+  padding: 11px 15px;
+  color: #c7ff32;
+  background: #111;
+  border: 2px solid #fff;
+  outline: 2px solid #111;
+  outline-offset: 2px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(.62rem, 1.5vw, .78rem);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0 #61f4ff, 8px 8px 0 #111;
+  transition: transform 120ms ease, box-shadow 120ms ease, color 120ms ease, background 120ms ease;
 }
+.bird-link-bar:hover { color:#111; background:#c7ff32; transform:translate(-3px,-3px); box-shadow:8px 8px 0 #ff31c8,11px 11px 0 #111; }
+.bird-link-bar:active { transform:translate(3px,3px); box-shadow:2px 2px 0 #61f4ff,4px 4px 0 #111; }
+.bird-link-bar:focus-visible { outline:4px solid #111; outline-offset:5px; }
 
-/* =========================================================
-   THE SIGMA67 GAME BUTTON
-   Deliberately loud / arcade / 90s / impossible to miss
-   ========================================================= */
-
-a.sigma-game-button,
-a.sigma-game-button:visited {
+a.sigma-game-button, a.sigma-game-button:visited {
   position: relative;
   isolation: isolate;
-
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
-
   width: min(480px, 92vw);
   margin-top: clamp(42px, 7vw, 76px);
   padding: 18px 26px 20px;
-
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-
   color: #fff;
-  background:
-    linear-gradient(90deg, #111 0 48%, #181818 48% 52%, #111 52% 100%);
-
+  background: linear-gradient(90deg,#111 0 48%,#181818 48% 52%,#111 52% 100%);
   border: 3px solid #fff;
   outline: 3px solid #111;
   outline-offset: 3px;
-
-  box-shadow:
-    8px 8px 0 #ff31c8,
-    12px 12px 0 #111,
-    0 0 24px rgba(255, 255, 255, 0.28);
-
-  transform: translate(0, 0);
+  box-shadow: 8px 8px 0 #ff31c8, 12px 12px 0 #111, 0 0 24px rgba(255,255,255,.28);
+  transform: translate(0,0);
   cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+}
+a.sigma-game-button::before, a.sigma-game-button::after { position:absolute; z-index:-1; content:""; width:12px; height:12px; background:#c7ff32; border:2px solid #111; }
+a.sigma-game-button::before { top:7px; left:7px; }
+a.sigma-game-button::after { right:7px; bottom:7px; }
+.sigma-game-button__tiny { color:#c7ff32; font-size:.68rem; letter-spacing:.22em; }
+.sigma-game-button__main { font-size:clamp(1rem,2.5vw,1.5rem); letter-spacing:.055em; }
+.sigma-game-button__sub { color:#61f4ff; font-size:clamp(.75rem,1.8vw,.96rem); letter-spacing:.12em; }
+a.sigma-game-button:hover { color:#111; background:#fff; transform:translate(-5px,-5px); box-shadow:13px 13px 0 #61f4ff,18px 18px 0 #111,0 0 35px rgba(255,255,255,.65); }
+a.sigma-game-button:hover .sigma-game-button__tiny { color:#5f9e00; }
+a.sigma-game-button:hover .sigma-game-button__sub { color:#dc00b4; }
+a.sigma-game-button:active { transform:translate(5px,5px); box-shadow:3px 3px 0 #ff31c8,6px 6px 0 #111; }
+a.sigma-game-button:focus-visible { outline:5px solid #111; outline-offset:8px; }
 
-  transition:
-    transform 120ms ease,
-    box-shadow 120ms ease,
-    background 120ms ease,
-    color 120ms ease;
+@keyframes rainbow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+@media (max-width:600px) {
+  .home { padding:20px; }
+  .bird-link-bar, .bird-link-bar:visited { top:12px; right:12px; max-width:calc(100vw - 24px); padding:9px 11px; box-shadow:4px 4px 0 #61f4ff,6px 6px 0 #111; }
+  a.sigma-game-button, a.sigma-game-button:visited { width:min(390px,89vw); margin-top:38px; padding:16px 18px 18px; box-shadow:6px 6px 0 #ff31c8,9px 9px 0 #111; }
 }
 
-a.sigma-game-button::before,
-a.sigma-game-button::after {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background: #c7ff32;
-  border: 2px solid #111;
-}
-
-a.sigma-game-button::before {
-  top: 7px;
-  left: 7px;
-}
-
-a.sigma-game-button::after {
-  right: 7px;
-  bottom: 7px;
-}
-
-.sigma-game-button__tiny {
-  color: #c7ff32;
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-}
-
-.sigma-game-button__main {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  letter-spacing: 0.055em;
-}
-
-.sigma-game-button__sub {
-  color: #61f4ff;
-  font-size: clamp(0.75rem, 1.8vw, 0.96rem);
-  letter-spacing: 0.12em;
-}
-
-a.sigma-game-button:hover {
-  color: #111;
-  background: #fff;
-
-  transform: translate(-5px, -5px);
-
-  box-shadow:
-    13px 13px 0 #61f4ff,
-    18px 18px 0 #111,
-    0 0 35px rgba(255, 255, 255, 0.65);
-}
-
-a.sigma-game-button:hover .sigma-game-button__tiny {
-  color: #5f9e00;
-}
-
-a.sigma-game-button:hover .sigma-game-button__sub {
-  color: #dc00b4;
-}
-
-a.sigma-game-button:active {
-  transform: translate(5px, 5px);
-
-  box-shadow:
-    3px 3px 0 #ff31c8,
-    6px 6px 0 #111;
-}
-
-a.sigma-game-button:focus-visible {
-  outline: 5px solid #111;
-  outline-offset: 8px;
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (max-width: 600px) {
-  .home {
-    padding: 20px;
-  }
-
-  a.sigma-game-button,
-  a.sigma-game-button:visited {
-    width: min(390px, 89vw);
-    margin-top: 38px;
-    padding: 16px 18px 18px;
-
-    box-shadow:
-      6px 6px 0 #ff31c8,
-      9px 9px 0 #111;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body {
-    animation: none;
-  }
-
-  #message,
-  a.sigma-game-button {
-    transition: none;
-  }
+@media (prefers-reduced-motion:reduce) {
+  body { animation:none; }
+  #message, .bird-link-bar, a.sigma-game-button { transition:none; }
 }

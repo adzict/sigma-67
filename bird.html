@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#050505" />
-  <title>brainrot SIGMA67</title>
+  <title>brainrot SIGMA67 // bird brain</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-99NBM52L6B"></script>
   <script>
@@ -13,46 +13,46 @@
     gtag('js', new Date());
     gtag('config', 'G-99NBM52L6B');
   </script>
-  <link rel="stylesheet" href="game.css" />
+  <link rel="stylesheet" href="bird.css?v=1" />
 </head>
 <body>
   <main class="game-shell">
-    <section class="game-card" aria-label="Sigma Run 67">
+    <section class="game-card" aria-label="Bird Brain 67">
       <header class="game-header">
         <a class="back-link" href="index.html" aria-label="Back to home">← HOME</a>
         <div class="title-wrap">
-          <div class="eyebrow">SIGMA-67 PRESENTS</div>
-          <h1>SIGMA RUN <span>// 67</span></h1>
+          <div class="eyebrow">SIGMA-67 AIRSPACE</div>
+          <h1>BIRD BRAIN <span>// 67</span></h1>
         </div>
         <button id="soundButton" class="sound-button" type="button" aria-pressed="true">SOUND: ON</button>
       </header>
       <div class="screen-wrap">
-        <canvas id="gameCanvas" aria-label="Retro endless runner game"></canvas>
+        <canvas id="birdCanvas" aria-label="Retro tap-to-fly arcade game"></canvas>
         <div id="startOverlay" class="overlay">
           <div class="overlay-panel">
-            <p class="tiny-label">PROTOCOL 67</p>
-            <h2>RUN. JUMP. DON'T PANIC.</h2>
+            <p class="tiny-label">AIRSPACE OPEN</p>
+            <h2>FLAP. PANIC. REPEAT.</h2>
             <p>SPACE / ↑ / CLICK / TAP</p>
-            <button id="startButton" class="primary-button" type="button">START</button>
+            <button id="startButton" class="primary-button" type="button">TAKE OFF</button>
           </div>
         </div>
         <div id="gameOverOverlay" class="overlay hidden" aria-live="polite">
           <div class="overlay-panel">
-            <p class="tiny-label">SIGNAL LOST</p>
-            <h2>NOT SIGMA ENOUGH.</h2>
+            <p class="tiny-label">AIRSPACE CLOSED</p>
+            <h2>GRAVITY WON.</h2>
             <p id="finalScore">SCORE: 0</p>
-            <button id="restartButton" class="primary-button" type="button">RETRY</button>
+            <button id="restartButton" class="primary-button" type="button">FLAP AGAIN</button>
           </div>
         </div>
         <div class="scanlines" aria-hidden="true"></div>
       </div>
       <footer class="game-footer">
-        <span>SPACE / ↑ / TAP = JUMP</span>
+        <span>SPACE / ↑ / TAP = FLAP</span>
         <span id="statusText">READY</span>
         <span>BEST: <strong id="bestScore">0</strong></span>
       </footer>
     </section>
   </main>
-  <script src="game.js?v=3"></script>
+  <script src="bird.js?v=1"></script>
 </body>
 </html>
