@@ -60,58 +60,6 @@ body {
   opacity: 0;
 }
 
-/* LEFT: Gauntlet 67 */
-.gauntlet-link-bar,
-.gauntlet-link-bar:visited {
-  position: absolute;
-  z-index: 30;
-  top: 18px;
-  left: 18px;
-  max-width: min(460px, calc(100vw - 36px));
-  padding: 11px 15px;
-  color: #ffcf55;
-  background: #111;
-  border: 2px solid #fff;
-  outline: 2px solid #111;
-  outline-offset: 2px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(.62rem, 1.5vw, .78rem);
-  font-weight: 900;
-  line-height: 1.25;
-  letter-spacing: .08em;
-  text-decoration: none;
-  text-transform: uppercase;
-  box-shadow:
-    -5px 5px 0 #ff4a2e,
-    -8px 8px 0 #111;
-  transition:
-    transform 120ms ease,
-    box-shadow 120ms ease,
-    color 120ms ease,
-    background 120ms ease;
-}
-
-.gauntlet-link-bar:hover {
-  color: #111;
-  background: #ffcf55;
-  transform: translate(3px, -3px);
-  box-shadow:
-    -8px 8px 0 #ff4a2e,
-    -11px 11px 0 #111;
-}
-
-.gauntlet-link-bar:active {
-  transform: translate(-3px, 3px);
-  box-shadow:
-    -2px 2px 0 #ff4a2e,
-    -4px 4px 0 #111;
-}
-
-.gauntlet-link-bar:focus-visible {
-  outline: 4px solid #111;
-  outline-offset: 5px;
-}
-
 /* RIGHT: Bird Brain */
 .bird-link-bar,
 .bird-link-bar:visited {
@@ -280,22 +228,12 @@ a.sigma-game-button:focus-visible {
     padding-top: 112px;
   }
 
-  .gauntlet-link-bar,
-  .gauntlet-link-bar:visited,
   .bird-link-bar,
   .bird-link-bar:visited {
     top: 12px;
     max-width: calc(50vw - 20px);
     padding: 8px 9px;
     font-size: .56rem;
-  }
-
-  .gauntlet-link-bar,
-  .gauntlet-link-bar:visited {
-    left: 10px;
-    box-shadow:
-      -3px 3px 0 #ff4a2e,
-      -5px 5px 0 #111;
   }
 
   .bird-link-bar,
@@ -324,7 +262,6 @@ a.sigma-game-button:focus-visible {
 
   #message,
   .bird-link-bar,
-  .gauntlet-link-bar,
   a.sigma-game-button {
     transition: none;
   }
